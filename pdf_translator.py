@@ -24,6 +24,17 @@ if sys.stderr is None:
 import pymupdf  # noqa: E402
 from langdetect import DetectorFactory, detect  # noqa: E402
 import argostranslate.translate as tr  # noqa: E402
+import stanza  # noqa: E402
+
+_stanza_pipeline = stanza.Pipeline
+
+
+def _offline_pipeline(*args, **kwargs):
+    kwargs.setdefault("download_method", stanza.DownloadMethod.NONE)
+    return _stanza_pipeline(*args, **kwargs)
+
+
+stanza.Pipeline = _offline_pipeline
 
 DetectorFactory.seed = 0
 
