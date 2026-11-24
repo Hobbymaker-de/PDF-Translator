@@ -1,0 +1,22 @@
+# Virtuelle Umgebung
+.venv/
+
+# Python-Cache
+__pycache__/
+*.pyc
+
+# PyInstaller-Ausgaben
+build/
+dist/
+
+# Übersetzungsmodelle (werden mit download_models.py geladen)
+models/
+
+# Tests und Beispiel-PDFs
+tests/
+
+# Editor- und Systemdateien
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
